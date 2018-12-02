@@ -1,9 +1,5 @@
 <template>
-  <div class="co-cart-list">
-
-    <h1>{{ msg }}</h1>
-    
-  </div>
+  <div class="co-cart-group"/>
 </template>
 
 <script>

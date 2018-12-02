@@ -6,11 +6,16 @@
     >
     <h1>{{ productTitle }} {{ productId }}</h1>
     <p>{{ title }}</p>
+    <Button
+      :label="buttonLabel"
+      @click="addToCart(product)"
+    />
   </article>
 </template>
 
 <script>
-
+import Button from "@/components/Button"
+import { mapActions } from "vuex"
 
 export default {
   name: "ProductItem",
@@ -32,10 +37,16 @@ export default {
 
   data() {
     return {
-      productTitle: 'Product'
-    }
-  }
+      productTitle: 'Product',
+      buttonLabel: 'Add to cart',
+    };
+  },
 
+  methods: {
+    ...mapActions({
+      addToCart: 'cart/addProductToCart'
+    })
+  }
 
 };
 </script>

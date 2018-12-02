@@ -7,18 +7,11 @@
       :title="product.title"
       :thumbnail-url="product.thumbnailUrl"
     />
-        
-    <Button
-      :label="buttonLabel"
-      @click="addToCart(product)"
-    />
   </div>
 </template>
 
 <script>
 import ProductItem from "@/components/ProductItem"
-import Button from "@/components/Button"
-import { mapActions } from "vuex"
 
 export default {
   name: "ProductList",
@@ -32,18 +25,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-
-  data() {
-    return {
-      buttonLabel: 'Add to cart',
-    };
-  },
-
-  methods: {
-    ...mapActions({
-      addToCart: 'cart/addProductToCart'
-    })
   }
 };
 </script>
