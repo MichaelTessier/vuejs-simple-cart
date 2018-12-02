@@ -15,13 +15,6 @@ import { mapGetters } from "vuex"
 export default {
   name: 'NavBar',
   
-  props: {
-    label: {
-      type: String,
-      required: true
-    }
-  },
-  
   computed: {
     ...mapGetters({
       getTotalProduct: 'cart/getTotalProduct'

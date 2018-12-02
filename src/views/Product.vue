@@ -1,26 +1,11 @@
 <template>
   <section class="vi-product">
-    <div v-if="products">
-      <h1>This is an product page</h1>
+    <h1>This is an product page</h1>
 
-      <div class="product-items">
-        <div
-          v-for="product in products"
-          :key="product.id"
-        >
-          <ProductItem 
-            :product-id="product.id"
-            :title="product.title"
-            :thumbnail-url="product.thumbnailUrl"
-          />
-        
-          <Button
-            :label="buttonLabel"
-            @click="addToCart(product)"
-          />
-        </div>
-      </div>
-    </div>
+    <ProductGroup 
+      v-if="products" 
+      :products="products"
+    />
     
     <div v-if="!products">
       Loading product
@@ -30,22 +15,18 @@
 
 <script>
 import axios from "axios"
-import ProductItem from "@/components/ProductItem"
-import Button from "@/components/Button"
-import { mapActions } from "vuex"
+import ProductGroup from "@/components/ProductGroup"
 
 export default {
   name: "Product",
 
   components: {
-    Button,
-    ProductItem
+    ProductGroup
   },
 
   data() {
     return {
       title: 'Product',
-      buttonLabel: 'Add to cart',
       products: null
     };
   },
@@ -57,14 +38,6 @@ export default {
       .then(response => {
         this.products = response.data.filter(product => product.albumId === 1);
       });
-  },
-
-  methods: {
-
-    ...mapActions({
-      addToCart: 'cart/addProductToCart'
-    })
-
   }
 };
 </script>
