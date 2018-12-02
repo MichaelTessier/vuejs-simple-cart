@@ -8,5 +8,11 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  mounted () {
+    const storage = localStorage.getItem('simple-cart/store');
+    if(storage) {
+      this.$store.commit('cart/INIT', JSON.parse(storage).products)
+    }   
+  },
   render: h => h(App)
 }).$mount("#app");
