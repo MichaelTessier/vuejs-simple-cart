@@ -1,5 +1,7 @@
 <template>
-  <div>{{ label }}</div>
+  <div @click="$emit('click', $event)">
+    {{ label }}
+  </div>
 </template>
 
 <script>
