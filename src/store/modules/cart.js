@@ -32,7 +32,9 @@ const mutations = {
 
   DECREMENT_PRODUCT: (state, product) => {
     const item = state.products.find(item => item.id === product.id)
-    item.quantity--
+    if(item.quantity > 0) {
+      item.quantity--
+    }
   }
 }
 
@@ -47,17 +49,16 @@ const actions = {
   },
 
   removeProductToCart: ({state, commit}, product) => {
-    if (state.products.find(item => item.quantity <= 1)) {
+    commit('DECREMENT_PRODUCT', product)
+    if (state.products.find(item => item.quantity === 0)) {
       commit('REMOVE_PRODUCT', product)
-    } else {
-      commit('DECREMENT_PRODUCT', product)
     }
     localStorage.setItem('simple-cart/store', JSON.stringify(state));
   }
 }
 
 const getters = {
-  getTotalProduct: (state) => {
+  getTotalProducts: (state) => {
     return state.products.reduce((total, product) => total + product.quantity, 0)
   }
 }
