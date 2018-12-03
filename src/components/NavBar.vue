@@ -4,7 +4,7 @@
       Product
     </RouterLink> |
     <RouterLink to="/cart">
-      Cart ({{ getTotalProduct }})
+      Cart ({{ getTotalProducts }})
     </RouterLink>
   </header>
 </template>
@@ -17,9 +17,9 @@ export default {
   
   computed: {
     ...mapGetters({
-      getTotalProduct: 'cart/getTotalProduct'
+      getTotalProducts: 'cart/getTotalProducts'
     })
-  },
+  }
 }
 
 </script>
