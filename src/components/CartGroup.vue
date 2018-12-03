@@ -7,13 +7,15 @@
         :product="product"
       />
     </div>
-    <div v-if="getTotalProducts === 0">
-      {{ emptyCartText }}
-    </div>
+    <Alert
+      v-if="getTotalProducts === 0"
+      :text="emptyCartText"
+    />
   </div>
 </template>
 
 <script>
+import Alert from '@/components/Alert'
 import CartItem from '@/components/CartItem'
 import { mapGetters } from 'vuex'
 
@@ -21,6 +23,7 @@ export default {
   name: 'ProductList',
 
   components: {
+    Alert,
     CartItem
   },
 
