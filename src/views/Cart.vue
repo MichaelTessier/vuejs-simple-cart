@@ -1,32 +1,32 @@
 <template>
   <section class="vi-cart">
-    <h1>This is an cart page</h1>
+    <div class="app_container">
+      <Title :title="title" />
 
-    <CartGroup 
-      v-if="products" 
-      :products="products"
-    />
-    
-    <div v-if="!products">
-      No products in cart
+      <CartGroup
+        v-if="products"
+        :products="products"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import CartGroup from "@/components/CartGroup"
+import CartGroup from '@/components/CartGroup'
+import Title from '@/components/Title'
 
 export default {
-  name: "Cart",
+  name: 'Cart',
 
   components: {
-    CartGroup
+    CartGroup,
+    Title
   },
 
   data() {
     return {
-      title: 'Cart',
-      products: null
+      title: 'Cart Page',
+      products: null,
     };
   },
 

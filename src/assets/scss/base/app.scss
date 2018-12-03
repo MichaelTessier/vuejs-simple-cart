@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+.app {
+
+  font-family: 'Open Sans', sans-serif;
+  color: $text-color;
+
+  &_container {
+    width: 1120px;
+    margin: auto;
+    padding: 0 -#{$gutter};
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    transition: color 400ms ease;
+    &:visited {
+      color: $text-color;
+    }
+    &:hover {
+      color: $primary;
+    }
+
+  }
+
+}

@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import ProductItem from "@/components/ProductItem"
+import ProductItem from '@/components/ProductItem'
 
 export default {
-  name: "ProductList",
+  name: 'ProductList',
 
   components: {
     ProductItem

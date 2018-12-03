@@ -4,11 +4,20 @@
     class="co-cart-item"
   >
     <img 
+      class="co-cart-item_img"
       :src="product.thumbnailUrl"
       :alt="product.title"
     >
-    <h1>{{ productTitle }} {{ product.id }}</h1>
-    <p>{{ product.title }}</p>
+
+    <div class="co-cart-item_body">
+      <h1 class="co-cart-item_title">
+        {{ productTitle }} {{ product.id }}
+        <Badge :text="'x ' + product.quantity" />
+      </h1>
+      <p class="co-cart-item_text">
+        {{ product.title }}
+      </p>
+    </div>
     <Button
       :label="buttonLabel"
       @click="removeToCart(product)"
@@ -17,13 +26,15 @@
 </template>
 
 <script>
-import Button from "@/components/Button"
-import { mapActions } from "vuex"
+import Badge from '@/components/Badge'
+import Button from '@/components/Button'
+import { mapActions } from 'vuex'
 
 export default {
-  name: "CartItem",
+  name: 'CartItem',
 
   components: {
+    Badge,
     Button
   },
 

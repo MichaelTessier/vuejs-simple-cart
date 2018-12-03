@@ -1,1 +1,44 @@
+.co-cart-item {
+  width: calc(100% - (#{$gutter} * 2));
+  margin-bottom: calc(#{$gutter} * 2) ;
+  text-align: center;
+  border: 1px solid $gray-100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: calc(#{$gutter} * 2);
 
+  &_body {
+    padding: $gutter $gutter calc(#{$gutter} * 2);
+    width: 68%;
+  }
+  &_img {
+    width: 150px;
+    height: 150px;
+    filter: grayscale(92%); 
+    display: block;
+    margin-right: $gutter;
+  }
+
+  &_title {
+    text-transform: uppercase;
+    font-weight: 500;
+    // width: 20%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    .co-badge {
+      margin-left: 10px;
+    }
+    
+  }
+
+  &_text {
+    // margin: calc(#{$gutter} * 4) 0;
+    // width: 50%;s
+    text-align: left;
+  }
+
+}

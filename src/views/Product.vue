@@ -1,32 +1,36 @@
 <template>
   <section class="vi-product">
-    <h1>This is an product page</h1>
+    <div class="app_container">
+      <Title :title="title" />
 
-    <ProductGroup 
-      v-if="products" 
-      :products="products"
-    />
+      <ProductGroup 
+        v-if="products" 
+        :products="products"
+      />
     
-    <div v-if="!products">
-      Loading product
+      <div v-if="!products">
+        Loading product
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import axios from "axios"
-import ProductGroup from "@/components/ProductGroup"
+import axios from 'axios'
+import ProductGroup from '@/components/ProductGroup'
+import Title from '@/components/Title'
 
 export default {
-  name: "Product",
+  name: 'Product',
 
   components: {
-    ProductGroup
+    ProductGroup,
+    Title
   },
 
   data() {
     return {
-      title: 'Product',
+      title: 'Product Page',
       products: null
     };
   },
@@ -34,7 +38,7 @@ export default {
   mounted() {
 
     axios
-      .get("https://jsonplaceholder.typicode.com/photos")
+      .get('https://jsonplaceholder.typicode.com/photos')
       .then(response => {
         this.products = response.data.filter(product => product.albumId === 1);
       });

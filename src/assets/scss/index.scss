@@ -1,0 +1,18 @@
+// helpers
+@import "@/assets/scss/helpers/variables.scss";
+
+// base
+@import "@/assets/scss/base/reset.scss";
+@import "@/assets/scss/base/app.scss";
+
+// components
+@import "@/assets/scss/components/badge.scss";
+@import "@/assets/scss/components/button.scss";
+@import "@/assets/scss/components/cart-item.scss";
+@import "@/assets/scss/components/cart-group.scss";
+@import "@/assets/scss/components/nav-bar.scss";
+@import "@/assets/scss/components/product-group.scss";
+@import "@/assets/scss/components/product-item.scss";
+@import "@/assets/scss/components/title.scss";
+
+// views

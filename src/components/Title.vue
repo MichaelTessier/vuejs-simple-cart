@@ -1,17 +1,14 @@
 <template>
-  <div
-    class="co-button"
-    @click="$emit('click', $event)"
-  >
-    {{ label }}
-  </div>
+  <h1 class="co-title">
+    {{ title }}
+  </h1>
 </template>
 
 <script>
 
 export default {
   props: {
-    label: {
+    title: {
       type: String,
       required: true
     }

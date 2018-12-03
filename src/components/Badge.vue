@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="co-button"
-    @click="$emit('click', $event)"
-  >
-    {{ label }}
+  <div class="co-badge">
+    {{ text }}
   </div>
 </template>
 
@@ -11,7 +8,7 @@
 
 export default {
   props: {
-    label: {
+    text: {
       type: String,
       required: true
     }

@@ -8,17 +8,17 @@
       />
     </div>
     <div v-if="getTotalProducts === 0">
-      {{ noProductsText }}
+      {{ emptyCartText }}
     </div>
   </div>
 </template>
 
 <script>
-import CartItem from "@/components/CartItem"
-import { mapGetters } from "vuex"
+import CartItem from '@/components/CartItem'
+import { mapGetters } from 'vuex'
 
 export default {
-  name: "ProductList",
+  name: 'ProductList',
 
   components: {
     CartItem
@@ -33,7 +33,7 @@ export default {
 
   data() {
     return {
-      noProductsText: 'There are not products in your cart'
+      emptyCartText: 'Your cart is empty'
     }
   },
 

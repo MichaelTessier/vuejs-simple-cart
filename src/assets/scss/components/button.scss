@@ -1,0 +1,21 @@
+.co-button {
+  background: linear-gradient(to right, $primary, $secondary);
+  border-radius: 40px; 
+  border: 1px solid $primary;
+  color: $white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba($primary, 0.5);
+  transition: all 400ms ease;
+
+  &:hover{
+    box-shadow: 0px 1px 2px rgba($primary, 0.5);
+  }
+
+  &:active{
+    background: $white;
+    color: $primary;
+  }
+}
