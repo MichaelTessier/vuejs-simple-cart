@@ -1,11 +1,11 @@
 <template>
   <article class="co-product-item">
     <img 
-      :src="thumbnailUrl"
-      :alt="title"
+      :src="product.thumbnailUrl"
+      :alt="product.title"
     >
-    <h1>{{ productTitle }} {{ productId }}</h1>
-    <p>{{ title }}</p>
+    <h1>{{ productTitle }} {{ product.id }}</h1>
+    <p>{{ product.title }}</p>
     <Button
       :label="buttonLabel"
       @click="addToCart(product)"
@@ -20,17 +20,13 @@ import { mapActions } from "vuex"
 export default {
   name: "ProductItem",
 
+  components: {
+    Button
+  },
+
   props: {
-    productId: {
-      type: Number,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    thumbnailUrl: {
-      type: String,
+    product: {
+      type: Object,
       required: true
     }
   },
